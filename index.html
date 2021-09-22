@@ -1,187 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 id="demo">kodluyoruz lesson 01</h1>
-    <script>
-     let number1 = '111'
-     number1 = parseInt(number1)
-     console.log(
-         "number1 :", parseInt(number1) , typeof(number1)
-     )
-//changing number to string 
-     let number2 = 22
-     number2 = number2.toString()
-     console.log(
-         number2
-     )
-     console.log("foo" + +"bar")
-     console.log('true' == true)
-     
-    //using of Template Literals
-     let username = "amira"
-     let domain = "ytu.edu.com"
-     let email = `${username}@${domain}`
-     let info = `welcome to your website   ${username}  this is your email : ${email} 
-     and this is your ${email.length} `
-
-     console.log(info)
-
-
-     //types of string 
-
-     //01-length of string 
-     console.log(
-         email.length
-     )
-
-     //index 
-     console.log(username[0])
-
-     //capital and small later 
-     username = username.toUpperCase()
-     console.log(username)
-
-     //search of information >> search
-     console.log(email.search("@"))
-     console.log(email[5])
-
-     //taken a spesicific plase //slice 
-     let Domain = email.slice(email.search("@") +1)
-     console.log(Domain)
-     console.log(domain.slice(0, Domain.indexOf(".")))
-
-     //change information >> replace 
-    email= email.replace("ytu.edu.com" , "kodluyoruz.com")
-    console.log(email)
-
-    //istedigim bilgi var mi >> includes "the answer here will be true or false " >> includes
-     console.log(email.includes("@")) // true
-     console.log(email.includes("fjhjk")) // false
-
-     //change string to array >> split 
-     let isim = 'amira , khalifa '
-     let isimler = isim.split(",")
-     console.log(isimler)
-
-
-     //question from pitka 
-     let url = "www.kodluyoruz.org";
-     let language = "Java";
-
-     //1
-     language= language.replace("Java" , "javascribt")
-     console.log(language)
-
-     //2
-     console.log(url.indexOf("."));
-
-     url = url.slice(3+1)
-     console.log(url)
-
-
-//_______________________________________________________
-     ////////if / else 
-
-
-     /*
-     == //equel
-     === //Hem değeri hem de türü eşitse
-     != //Eşit değilse
-     < //Küçükse
-     <= //Küçük veya eşitse
-     > //Büyükse ve >= Büyük veya eşitse
-     && //ve 
-     || //veya
-     ! //değil
-     */
-
-
-     /*let Username = (prompt("kullanci adinizi giriniz "))
-
-     if (Username.length>6) {
-         console.log("HOS GELDINIZ  ",  Username)
-        
-     }
-     else
-         console.log("bilgi yok")
-
-/*2.Örnek: Vize ve final notları belli olan bir öğrencinin yıl sonunda dersten geçip geçmediğini hesaplayalım:
-
-Şartlar:
-
-Öğrencinin vize notunun %30'unu final notunun %70'ini alalım.
-Vize ve final notunun toplamından doğan not ortalaması eğer 0-30 aralığındaysa KALDINIZ (FF) yazdıralım.
-31-49 aralığındaysa DC - KOŞULLU yazdıralım.
-50- 84 aralığındaysa CC - GEÇTİNİZ! yazdıralım.
-85-100 aralığındaysa Notunuz AA yazdıralım.*/
-
-//answer
-let vizeNot = 45 ;
-let finalNot = 60 ;
-let ortalama = (vizeNot*0.3 )+ (finalNot*0.7) ;
-    
-if(ortalama >= 0 && ortalama<= 30){
-    console.log("FF")
-}
-else if (ortalama>=31 && ortalama<=49){
-    console.log("DC - KOŞULLU");
-}
-else if (ortalama>=50 && ortalama<=84){
-    console.log("CC - GEÇTİNİZ");
-}
-else if (ortalama>= 85 && ortalama<= 100 ){
-    console.log("Notunuz AA");
-}
-/*
-//
-//3.Örnek Tahmin Oyunu: Bilgisayar tarafından 10 'a kadar tutulmuş olan rastgele sayıyı bulalım:
-var randomSayi = Math.floor(Math.random() * 10);
-//Girdiğimiz sayıyı aklında tutması için prompt değişkene atanır
-var tahmin = prompt("Bir sayı gir ve rastgele sayıyı bulmaya çalış!");
-if (tahmin === randomSayi && tahmin != null) alert("Bildin!!!");
-else if (tahmin == "") alert("Boş giriş yaptınız!");
-else if (tahmin == null) alert("Giriş yapmaktan vazgeçtiniz!");
-else {
-  alert("Bir daha denee :(, Random sayi: " + randomSayi);
-}
-     */
-    /*
-//4.Örnek Verilen formüle göre vücut kitle indeksi hesaplayan ve hesapladığı değere göre yazı yazan bir program yazalım. Programda yazılmış kısımları okuyup eksik kısımları tamamlayın.
-
-let insanKutle = prompt("kilonuzu giriniz")
-let insanUzunluk = prompt("uzunlugunuzu giriniz")
-let vki = ( insanKutle/(insanUzunluk*insanUzunluk) )  
-
-
-    if(vki<18.5) {console.log(alert(`Vücut kitle indeksiniz: ${vki}, değerleriniz düşüktür`));}
-else if(vki>= 18.5 && vki <= 24.9) {console.log(alert(`Vücut kitle indeksiniz: ${vki}, normal değerdesiniz`));}
-else if(vki>= 25.0 && vki <= 29.9) {console.log(alert(`Vücut kitle indeksiniz: ${vki}, kilolusunuz`));}
-else if(vki>= 30) {console.log(alert(`Vücut kitle indeksiniz: ${vki}, aşırı kilolusunuz`));}
-else {console.log(alert("Girdiğiniz değerleri kontrol ediniz"));}
-
-
-//i made ittttttt
-*/
-var money;
-    var canBuy = 
-        (money < 17) ? "Satın alamazsın..":
-        (money > 30) ? "Satın alabilirsin..":
-        "Para miktarını girmen gerekmektedir..";
-
-    console.log(canBuy)
-
-
-
-
-
-
-    </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <title>Kodluyoruz Javascript Saat Ödevi</title>
+  </head>
+  <body class="bg-dark">
+    <div class="text-center">
+      <img
+        src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png"
+        alt=""
+        class="rounded"
+      />
+      <div class="text1 text-center">
+        Merhaba, <strong><span id="myName"></span></strong>! Hoş geldin!
+      </div>
+      <div id="myClock" class="clock" onload="showTime()"></div>
+      <div class="text2 text-center">
+        tarihinde
+        <strong>Kodluyoruz Frontend Web Development Patikası</strong>'nın
+        Javascript bölümü 1. Ödevindesiniz.
+      </div>
+    </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
